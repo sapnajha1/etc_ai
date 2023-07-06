@@ -1,6 +1,8 @@
 import 'package:english_ai/const/color.dart';
 import 'package:english_ai/screen/aap_bar.dart';
 import 'package:english_ai/screen/drawer.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -34,10 +36,14 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: themecolor,
       appBar: appbar(appbaricon: Icons.person,appbarsize: 12,),
+      // drawer: drawer(drawericon:ImageIcon(AssetImage("images/Icon3.png")),drawericonsize: 30,)
 
-      drawer: drawer(),
+
+
+       // backgroundColor:themecolor,
+      );
       // body: Container(height: 200,width: 200,decoration: BoxDecoration(color: Colors.cyan),),
-    );
+
   }
 }
 
