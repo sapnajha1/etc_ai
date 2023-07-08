@@ -42,6 +42,8 @@ class _MainPageState extends State<MainPage> {
         appbarsize: 16,
       ),
       // drawer: drawer(drawericon:ImageIcon(AssetImage("images/Icon3.png")),drawericonsize: 30,)
+      // drawer: drawer(drawericon:ImageIcon(AssetImage("images/Icon3.png")),drawericonsize: 30,
+      // drawer: drawer(drawericon:ImageIcon(AssetImage("images/Icon3.png")),drawericonsize: 30,)
 
       // backgroundColor:themecolor,
     );
