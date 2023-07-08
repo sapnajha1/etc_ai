@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'English AI',
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan)),
+      theme:
+          ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan)),
       debugShowCheckedModeBanner: false,
       // home: splash(),
       home: MainPage(),
@@ -34,16 +35,16 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: themecolor,
-      appBar: appbar(appbaricon: Icons.person,appbarsize: 12,),
+    return Scaffold(
+      backgroundColor: themecolor,
+      appBar: appbar(
+        appbaricon: Icons.person,
+        appbarsize: 16,
+      ),
       // drawer: drawer(drawericon:ImageIcon(AssetImage("images/Icon3.png")),drawericonsize: 30,)
 
-
-
-       // backgroundColor:themecolor,
-      );
-      // body: Container(height: 200,width: 200,decoration: BoxDecoration(color: Colors.cyan),),
-
+      // backgroundColor:themecolor,
+    );
+    // body: Container(height: 200,width: 200,decoration: BoxDecoration(color: Colors.cyan),),
   }
 }
-
