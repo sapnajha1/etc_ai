@@ -41,7 +41,9 @@ class _MainPageState extends State<MainPage> {
         appbaricon: Icons.person,
         appbarsize: 16,
       ),
-      
+      bottomNavigationBar: BottomNavigationBar(selectedFontSize: 10.0,iconSize: 10.0,items: [
+      BottomNavigationBarItem(icon:Image.asset("images/left-arrow.png",height: 30.0),label:("Previous"),backgroundColor: Colors.black,),
+      BottomNavigationBarItem(icon:Image.asset("images/right-arrow-black-triangle.png",height: 30,),label:("Next"),backgroundColor: Colors.black,),
       // drawer: drawer(drawericon:ImageIcon(AssetImage("images/Icon3.png")),drawericonsize: 30,)
       // drawer: drawer(drawericon:ImageIcon(AssetImage("images/Icon3.png")),drawericonsize: 30,
       // drawer: drawer(drawericon:ImageIcon(AssetImage("images/Icon3.png")),drawericonsize: 30,)
