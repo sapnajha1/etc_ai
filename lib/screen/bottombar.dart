@@ -15,9 +15,11 @@ class bottomScreenState extends State<bottomScreen> {
       BottomNavigationBarItem(icon:Image.asset("images/left-arrow.png",height: 30.0),label:("Previous"),backgroundColor: Colors.black,),
       BottomNavigationBarItem(icon:Image.asset("images/right-arrow-black-triangle.png",height: 30,),label:("Next"),backgroundColor: Colors.black,),
  ], ),
+  
     );
   }
 }
+
 
 
 
