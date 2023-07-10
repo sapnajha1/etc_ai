@@ -6,8 +6,8 @@ import'package:flutter/material.dart';
 class Focas_container extends StatelessWidget {
   const Focas_container({
     super.key,
-   required this.height,
-   required this.width,
+    required this.height,
+    required this.width,
     required this.fontsize
     
   });
