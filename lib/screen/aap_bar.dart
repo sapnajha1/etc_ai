@@ -1,15 +1,17 @@
 import 'package:english_ai/const/color.dart';
 import 'package:english_ai/screen/drawer.dart';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 class appbar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? appbaricon;
   // final Color?  themecolor;
   final double? appbarsize;
 
+
   appbar({required this.appbaricon, required this.appbarsize});
+
 
   // String valueChoose;
   @override
