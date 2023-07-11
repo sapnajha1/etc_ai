@@ -1,5 +1,5 @@
 import 'package:english_ai/const/color.dart';
-import 'package:english_ai/screen/drawer.dart';
+// import 'package:english_ai/screen/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,9 +8,15 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? appbaricon;
   // final Color?  themecolor;
   final double? appbarsize;
+  final double? midpadding;
+  final double? image_height;
+  final double? image_width;
+  final double? textfont;
+  final double? popupsize;
 
 
-  appbar({required this.appbaricon, required this.appbarsize});
+
+  appbar({required this.appbaricon, required this.appbarsize ,required this.popupsize, required this.midpadding , required this.image_height,required this.textfont,required this.image_width});
 
 
   // String valueChoose;
@@ -19,17 +25,17 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         elevation: 0.0,
         automaticallyImplyLeading: false,
-        backgroundColor: unique,
+        backgroundColor: highlights,
         title: Padding(
             padding: EdgeInsets.all(1),
             child: Row(children: [
               Padding(
-                padding: const EdgeInsets.only(left: 1, top: 20),
+                padding: const EdgeInsets.only(left: 1, top: 20), 
                 child: Container(
-                  height: 20,
-                  width: 50,
+                  height: image_height,
+                  width: image_width,
                   decoration: BoxDecoration(
-                    color: unique,
+                    color: highlights,
                   ),
                   child: Image.asset(
                     "images/new.png",
@@ -38,17 +44,21 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
 
-              SizedBox(
-                width: 80,
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text("English AI",style: GoogleFonts.poppins(color: menu,fontSize: textfont,fontWeight: FontWeight.bold),),
+              ),
+              SizedBox(width:
+                midpadding
               ),
 
               // SizedBox(width: 1,),
               // Padding(padding: EdgeInsets.only(left: 0,top: 10),
               // child:
               Padding(
-                padding: const EdgeInsets.only(left: 100, top: 10),
+                padding: const EdgeInsets.only(left:80,  top: 10),
                 child: Container(
-                  height: 40,
+                  height: 30,
                   width: 100,
                   decoration: BoxDecoration(
                       color: menu, borderRadius: BorderRadius.circular(20)),
@@ -67,7 +77,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
                         padding: EdgeInsets.only(left: 0, top: 0),
                         child: Align(
                           alignment: Alignment.topRight,
-                          child: PopupMenuButton<String>(
+                          child: PopupMenuButton<String>(iconSize: popupsize,
                             color: themecolor,
                             onSelected: (String value) {
                               // Handle menu item selection here

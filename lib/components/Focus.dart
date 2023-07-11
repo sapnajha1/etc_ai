@@ -1,5 +1,7 @@
-import 'package:english_ai/widgets/widgets.dart';
+import 'package:english_ai/constWidget/textwidget.dart';
 import'package:flutter/material.dart';
+import 'package:english_ai/const/color.dart';
+
 
 // import '../const_style.dart';
 
@@ -25,16 +27,15 @@ class Focas_container extends StatelessWidget {
       child: Container(
             height:height,
             width:width,
-            decoration:BoxDecoration(color: focusmode,borderRadius: BorderRadius.circular(15)),
+            decoration:BoxDecoration(color: focusmode,borderRadius:BorderRadius.circular(15)),
             child:Padding(
               padding: const EdgeInsets.all(10.0),
               child: Row(
                 children: [
                   Icon(Icons.visibility),
                   SizedBox(width:8),
-                  textwidget("Focus Mode",fontsize,FontWeight.bold, textcolor),
-                ],
-              ),
+                  textwidget("Enter Focus Mode",fontsize,FontWeight.bold,Colors.black),
+                ]),
             )
       ),
     );

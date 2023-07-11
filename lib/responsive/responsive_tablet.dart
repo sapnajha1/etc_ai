@@ -15,7 +15,7 @@ class _apppbar4State extends State<apppbar4> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar: appbar(appbaricon: Icons.person, appbarsize: 12, midpadding: 70,image_height: 30,image_width: 60,textfont: 20,)
+        appBar: appbar(appbaricon: Icons.person,popupsize: 18, appbarsize: 12, midpadding: 70,image_height: 30,image_width: 60,textfont: 20,)
     );
 
 

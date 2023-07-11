@@ -12,7 +12,7 @@ class _appbar2State extends State<appbar2> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: appbar(appbaricon:Icons.person , appbarsize:12 , midpadding:40,image_height: 20,image_width: 50,textfont: 15, )
+      appBar: appbar(appbaricon:Icons.person , popupsize:15,appbarsize:12 , midpadding:40,image_height: 20,image_width: 50,textfont: 15, )
     );
 
 
