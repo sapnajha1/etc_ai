@@ -9,7 +9,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
   // final Color?  themecolor;
   final double? appbarsize;
 
-
+  
   appbar({required this.appbaricon, required this.appbarsize});
 
 

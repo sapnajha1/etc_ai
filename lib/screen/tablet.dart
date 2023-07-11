@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../component/Article_image.dart';
 import '../component/focas_con.dart';
 import '../const_style.dart';
@@ -133,11 +132,6 @@ class _tabletPageState extends State<tabletPage> {
                              ]),
                             ))
                          ]), 
-                     
-                  
-      
-                        
-                      
                      ], ),
       ),
      )
