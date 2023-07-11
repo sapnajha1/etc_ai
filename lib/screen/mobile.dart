@@ -20,15 +20,11 @@ class _MobilePageState extends State<MobilePage> {
   double textsize=20;
   
   Color btn_col = Colors.white;
-  int? selected_index=3;
+  int selected_index=3;
+  int article_name_ind=4;
  
 
-  void btn_color(int selected_index) {
-  setState(() {
-    if (selected_index==1){
-    btn_col = Color.fromARGB(255, 117, 169, 215);}
-  });
-}
+  
 
 
   @override
@@ -56,7 +52,7 @@ class _MobilePageState extends State<MobilePage> {
                       Article_image(height:mq.height*0.08,width:mq.width*0.160),
                       const SizedBox(width:20),
                       //// ARTICLE NAME
-                      textwidget("Eid Festival",22, FontWeight.bold, textcolor),
+                      textwidget(articles[article_name_ind]['articles_name'],22, FontWeight.bold, textcolor),
                       
                   
                       ],),
@@ -137,7 +133,7 @@ class _MobilePageState extends State<MobilePage> {
                                         Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
-                          child: textwidget(articles[0]['versions'][selected_index-1], 
+                          child: textwidget(articles[article_name_ind]['versions'][selected_index-1], 
                             textsize, FontWeight.w200, Color.fromARGB(255, 245, 144, 141)),
                             ),
                     )

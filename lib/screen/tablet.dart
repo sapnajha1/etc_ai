@@ -18,14 +18,9 @@ class _tabletPageState extends State<tabletPage> {
   double textsize=24;
   Color btn_col = Colors.white;
   int selected_index=3;
- 
+  int article_name_ind=3;
 
-  void btn_color(int selected_index) {
-  setState(() {
-    if (selected_index==1){
-    btn_col = Color.fromARGB(255, 117, 169, 215);}
-  });
-}
+  
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +41,7 @@ class _tabletPageState extends State<tabletPage> {
                   children: [
                    Article_image(height:mq.height*0.15,width:mq.width*0.20),
                     const SizedBox(width:25),
-                    textwidget("Eid Festival",40, FontWeight.bold, textcolor),
+                    textwidget(articles[article_name_ind]['article_name'],40, FontWeight.bold, textcolor),
                     //  const SizedBox(width:30)
               
                   ],),
@@ -139,7 +134,7 @@ class _tabletPageState extends State<tabletPage> {
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
-                          child: textwidget(articles[0]['versions'][selected_index-1], 
+                          child: textwidget(articles[article_name_ind]['versions'][selected_index-1], 
                             textsize, FontWeight.w200, Color.fromARGB(255, 245, 144, 141)),
                             ),
                     )

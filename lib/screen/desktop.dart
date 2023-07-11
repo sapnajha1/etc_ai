@@ -27,15 +27,7 @@ class _DesktopPageState extends State<DesktopPage> {
 
 
   int selected_index=0;
- 
-
-  void btn_color(int selected_index) {
-  setState(() {
-    if (selected_index==1){
-    btn_col = Color.fromARGB(255, 117, 169, 215);}
-    
-  });
-}
+  int article_name_ind=2;
 
 
 
@@ -62,7 +54,7 @@ class _DesktopPageState extends State<DesktopPage> {
 
                     // Article name 
                     const SizedBox(width:30),
-                    textwidget("Eid Festival",25, FontWeight.bold, textcolor),
+                    textwidget(articles[article_name_ind]['articles_name'],25, FontWeight.bold, textcolor),
                     
                     // Article in Focus mode 
                     const SizedBox(width:30),
@@ -148,7 +140,7 @@ class _DesktopPageState extends State<DesktopPage> {
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
-                          child: textwidget(articles[0]['versions'][selected_index-1], 
+                          child: textwidget(articles[article_name_ind]['versions'][selected_index-1], 
                             textsize, FontWeight.w200, Color.fromARGB(255, 245, 144, 141)),
                             ),
                     )
