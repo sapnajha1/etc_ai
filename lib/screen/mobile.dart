@@ -134,12 +134,12 @@ class _MobilePageState extends State<MobilePage> {
 
                     //ARTICLE CONTENT
                     
-                    Padding(
+                                        Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
-                            child: textwidget("hello !", 
-                              textsize, FontWeight.w200, Color.fromARGB(255, 245, 144, 141)),
-                              ),
+                          child: textwidget(articles[0]['versions'][selected_index-1], 
+                            textsize, FontWeight.w200, Color.fromARGB(255, 245, 144, 141)),
+                            ),
                     )
           
           ])

@@ -145,11 +145,13 @@ class _DesktopPageState extends State<DesktopPage> {
                       SizedBox(height:30),
 
                       // Article content
-                      Container(
-                          
-                          child: Text("Eid is a special festival that Muslims around the world celebrate with great joy and excitement. It marks the end of Ramadan, a month of fasting and prayers. Eid is a time for families and friends to come together and share happiness.During Eid, people wear beautiful new clothes and greet each other by saying 'Eid Mubarak!' which means 'Blessed Eid!' Children receive gifts and sweets, and everyone enjoys delicious food.One of the most important parts of Eid is going to the mosque for special prayers. People thank Allah for all the blessings and show gratitude for the month of Ramadan. After the prayers, families visit each other and exchange greetings.Eid is also a time for giving to those in need. Muslims donate money and food to charity to help those who are less fortunate. It teaches us the value of kindness and sharing.The highlight of Eid is the delicious food! Families prepare traditional dishes like biryani, samosas, and sweet treats like sheer khurma",
-                          style:TextStyle(fontSize: textsize) ,)),
-                      
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                          child: textwidget(articles[0]['versions'][selected_index-1], 
+                            textsize, FontWeight.w200, Color.fromARGB(255, 245, 144, 141)),
+                            ),
+                    )
                         ],
                        ),
         ),
