@@ -8,9 +8,14 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? appbaricon;
   // final Color?  themecolor;
   final double? appbarsize;
+  final double? midpadding;
+  final double? image_height;
+  final double? image_width;
+  final double textfont;
+  double popupmenu;
 
   
-  appbar({required this.appbaricon, required this.appbarsize});
+  appbar({required this.appbaricon, required this.appbarsize ,required this.popupmenu,required this.image_width,required this.image_height,required this.textfont, required this.midpadding});
 
 
   // String valueChoose;
@@ -26,8 +31,8 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 1, top: 20),
                 child: Container(
-                  height: 20,
-                  width: 50,
+                  height: image_height,
+                  width: image_width,
                   decoration: BoxDecoration(
                     color: unique,
                   ),
@@ -38,8 +43,9 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
 
-              SizedBox(
-                width: 80,
+              Text("English AI",style: TextStyle(color: menu,fontWeight: FontWeight.bold,fontSize: textfont),),
+              SizedBox(width:
+                midpadding,
               ),
 
               // SizedBox(width: 1,),
@@ -67,7 +73,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
                         padding: EdgeInsets.only(left: 0, top: 0),
                         child: Align(
                           alignment: Alignment.topRight,
-                          child: PopupMenuButton<String>(
+                          child: PopupMenuButton<String>(iconSize: popupmenu,
                             color: themecolor,
                             onSelected: (String value) {
                               // Handle menu item selection here

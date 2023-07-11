@@ -1,5 +1,7 @@
-import 'package:english_ai/widgets/widgets.dart';
 import'package:flutter/material.dart';
+
+import '../const/color.dart';
+import '../constWidget/textwidget.dart';
 
 // import '../const_style.dart';
 
