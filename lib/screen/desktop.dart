@@ -5,6 +5,7 @@ import 'package:english_ai/constWidget/textwidget.dart';
 import '../components/Article.dart';
 import '../components/Focus.dart';
 import '../const/color.dart';
+import 'aap_bar.dart';
 import 'bottombar.dart';
 
 
@@ -28,10 +29,13 @@ class _DesktopPageState extends State<DesktopPage> {
   double textsize=20;
 
 
-  int selected_index=0;
-  int article_name_ind=2;
-  int fontsize = 15;
+  int selected_index=3;
+  int article_name_ind=3;
+  double fontsize = 20;
   int selected_index2=1;
+  // int article_name_ind=3;
+  // int selected_index2=1;
+
 
 
 
@@ -41,6 +45,10 @@ class _DesktopPageState extends State<DesktopPage> {
   Widget build(BuildContext context) {
     var mq= MediaQuery.of(context).size;
     return Scaffold(
+      appBar: appbar(
+        appbaricon: Icons.person,
+        appbarsize: 16,midpadding:1000,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
+      ),
       // appBar: appbar(appbaricon:, appbarsize: appbarsize),
       body: Column(
         children: [
@@ -60,12 +68,16 @@ class _DesktopPageState extends State<DesktopPage> {
                           Article_image(height:mq.height*0.15,width:mq.width*0.15),
 
                           // Article name
-                          const SizedBox(width:30),
-                          textwidget(articles[article_name_ind]['articles_name'],25, FontWeight.bold, textcolor),
+                          const SizedBox(width:25),
+                          // textwidget("Eid Festival",22, FontWeight.bold, Colors.black),
+
+                          textwidget(articles[article_name_ind]['article_name'],40, FontWeight.bold, textcolor),
+
+                          // textwidget(articles[article_name_ind]['articles_name'],25, FontWeight.bold, textcolor),
 
                           // Article in Focus mode
-                          const SizedBox(width:30),
-                          Focas_container(height:mq.height* 0.070,width:mq.width* 0.10,fontsize:15)
+                          const SizedBox(width:25),
+                          Focas_container(height:mq.height* 0.070,width:mq.width* 0.15,focusfontsize:18,focusiconsize: 18,)
 
                         ],),
 
@@ -107,6 +119,7 @@ class _DesktopPageState extends State<DesktopPage> {
                                   onPressed:(){setState(() {selected_index=5;});},child: textwidget("5", 20, FontWeight.w300, textcolor)),
                               ],),
                                 ),
+
                               ]),
                             )),
 
@@ -123,13 +136,13 @@ class _DesktopPageState extends State<DesktopPage> {
                                   children:[
                                     FloatingActionButton(elevation: 0.0,backgroundColor:
                                     selected_index2==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                        onPressed:(){setState(() {fontsize=10;});},child: textwidget("A", 10, FontWeight.w500, Colors.black)),
+                                        onPressed:(){setState(() {selected_index2=1;fontsize=20;});},child: textwidget("A", 10, FontWeight.w500, Colors.black)),
                                     FloatingActionButton(elevation: 0.0,backgroundColor:
                                     selected_index2==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                        onPressed:(){setState(() {fontsize=20;});},child: textwidget("A", 15, FontWeight.w500, Colors.black)),
+                                        onPressed:(){setState(() {selected_index2=2;fontsize=28;});},child: textwidget("A", 15, FontWeight.w500, Colors.black)),
                                     FloatingActionButton(elevation: 0.0,backgroundColor:
                                     selected_index2==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                        onPressed:(){setState(() {fontsize=25;});},child: textwidget("A", 18, FontWeight.w500, Colors.black)),
+                                        onPressed:(){setState(() {selected_index2=3;fontsize=32;});},child: textwidget("A", 18, FontWeight.w500, Colors.black)),
 
                                   ],),
                               ),
@@ -138,12 +151,35 @@ class _DesktopPageState extends State<DesktopPage> {
                             ],),
                             SizedBox(height:30),
                           // Article content
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Container(
-                                child: textwidget(articles[article_name_ind]['versions'][selected_index-1],
-                                  textsize, FontWeight.w300, Colors.black)),
+                          //       Padding(
+                          //         padding: const EdgeInsets.all(10.0),
+                          //         child: Container(
+                          //           child: textwidget("                              Eid is a special festival that Muslims around the world celebrate with great joy and excitement. It marks the end of Ramadan, a month of fasting and prayers. "
+                          //               "Eid is a time for families and friends to come together and share happiness. During Eid, people wear beautiful new clothes and greet each other by saying 'Eid Mubarak!', \n\n      which means 'Blessed Eid!' "
+                          //               "Children receive gifts and sweets, and everyone enjoys delicious food. One of the most important parts of Eid is going to the mosque for special prayers. "
+                          //               "People thank Allah for all the blessings and show gratitude for the month of Ramadan. After the prayers, families visit each other and exchange greetings. "
+                          //               "\n\nEid is also a time for giving to those in need. Muslims donate money and food to charity to help those who are less fortunate. It teaches us the value of kindness and sharing. "
+                          //               "The highlight of Eid is the delicious food! Families prepare traditional dishes like biryani, samosas, and sweet treats like sheer khurma.",
+                          //               fontsize, FontWeight.w400, Colors.black),
+                          //         ),
+                          //       )
+
+
+
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Container(
+                                    child: textwidget(articles[article_name_ind]['versions'][selected_index -1],
+                                        fontsize, FontWeight.w200, Colors.black),
                                   ),
+                                )
+                                // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+                          // Padding(
+                          //   padding: const EdgeInsets.all(10.0),
+                          //   child: Container(
+                          //       child: textwidget(articles[article_name_ind]['versions'][selected_index-1],
+                          //         textsize, FontWeight.w300, Colors.black)),
+                          //         ),
 
                               ],
                              ),
@@ -151,7 +187,7 @@ class _DesktopPageState extends State<DesktopPage> {
             ),
           ),
 
-      Container(height: 50,width: 500
+      Container(height: 50,width: 1500
           ,child: bottomScreen()),
         ],
       ),

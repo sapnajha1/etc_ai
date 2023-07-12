@@ -10,13 +10,15 @@ class Focas_container extends StatelessWidget {
     super.key,
     required this.height,
     required this.width,
-    required this.fontsize
+    required this.focusfontsize,
+    required this.focusiconsize,
     
   });
   
   final double height;
   final double width;
-  final double fontsize;
+  final double focusfontsize;
+  final double focusiconsize;
   
 
   @override
@@ -28,12 +30,12 @@ class Focas_container extends StatelessWidget {
             width:width,
             decoration:BoxDecoration(color: focusmode,borderRadius: BorderRadius.circular(15)),
             child:Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.only(left: 7),
               child: Row(
                 children: [
-                  Icon(Icons.visibility),
+                  Icon(Icons.visibility,size: focusiconsize,),
                   SizedBox(width:8),
-                  textwidget("Focus Mode",fontsize,FontWeight.bold, textcolor),
+                  textwidget("Enter Focus Mode",focusfontsize,FontWeight.bold, textcolor),
                 ],
               ),
             )

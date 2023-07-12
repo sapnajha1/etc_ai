@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../article_content.dart';
 import '../components/Article.dart';
 import '../components/Focus.dart';
+import '../const/color.dart';
 import 'aap_bar.dart';
 import 'bottombar.dart';
 
@@ -24,8 +25,9 @@ class _MobilePageState extends State<MobilePage> {
 
   int selected_index=3;
   int? selected_index2=1;
+  int article_name_ind=3;
 
-  double fontsize=10;
+  double fontsize=15;
 
 
 
@@ -55,9 +57,15 @@ class _MobilePageState extends State<MobilePage> {
                             children: [
                               // ARTICLE IMAGE
                               Article_image(height:mq.height*0.08,width:mq.width*0.200),
-                              const SizedBox(width:20),
+                              const SizedBox(width:1),
+
+                              // //// ARTICLE NAME
+                              // textwidget("Eid Festival",22, FontWeight.bold, Colors.black),
+
                               //// ARTICLE NAME
-                              textwidget(articles[0]['article_name_ind'],22, FontWeight.bold, Colors.black),
+
+                              textwidget(articles[article_name_ind]['article_name'],18, FontWeight.bold, textcolor),
+
 
 
                             ],),
@@ -67,7 +75,7 @@ class _MobilePageState extends State<MobilePage> {
                               children:[
 
                                 // FOCE MODE
-                                Focas_container(height:mq.height* 0.050,width:mq.width*0.472,fontsize:14),
+                                Focas_container(height:mq.height* 0.040,width:mq.width*0.450,focusfontsize: 15,focusiconsize: 15),
                                 // const SizedBox(width:1),
 
                                 // INCREASING FONTSIZE
@@ -81,7 +89,7 @@ class _MobilePageState extends State<MobilePage> {
                                       children:[
                                         FloatingActionButton(elevation: 0.0,backgroundColor:
                                         selected_index2==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                            onPressed:(){setState(() {selected_index2=1;fontsize=10;});},child: textwidget("A", 10, FontWeight.w500, Colors.black)),
+                                            onPressed:(){setState(() {selected_index2=1;fontsize=15;});},child: textwidget("A", 10, FontWeight.w500, Colors.black)),
                                         FloatingActionButton(elevation: 0.0,backgroundColor:
                                         selected_index2==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
                                             onPressed:(){setState(() {selected_index2=2;fontsize=20;});},child: textwidget("A", 15, FontWeight.w500, Colors.black)),
@@ -144,13 +152,29 @@ class _MobilePageState extends State<MobilePage> {
 
                           //ARTICLE CONTENT
 
+
                           SizedBox(height: 40,),
+
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              child: textwidget(articles[article_name_ind]['versions'][selected_index-1],
+                                  fontsize, FontWeight.w200, Colors.black),
+                            ),
+                          )
+
+
+
+                          // SizedBox(height: 40,),
                           // Padding(
                           //   padding: const EdgeInsets.all(10.0),
                           //   child: Container(
-                          //     child: textwidget(articles[0]['versions'][selected_index-1],
-                          //         fontsize, FontWeight.w400, Colors.black),
-                          //   ),
+                          //     child:
+                          //     textwidget(articles[article_name_ind]['versions'][selected_index-1],
+                          //         textsize, FontWeight.w300, Colors.black)),
+                          //     // textwidget(articles[0]['versions'][selected_index-1],
+                          //     //     fontsize, FontWeight.w400, Colors.black),
+                          //
                           // )
 
                         ])

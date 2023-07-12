@@ -24,7 +24,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         elevation: 0.0,
         automaticallyImplyLeading: false,
-        backgroundColor: unique,
+        backgroundColor: highlights,
         title: Padding(
             padding: EdgeInsets.all(1),
             child: Row(children: [
@@ -34,7 +34,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
                   height: image_height,
                   width: image_width,
                   decoration: BoxDecoration(
-                    color: unique,
+                    color: highlights,
                   ),
                   child: Image.asset(
                     "images/new.png",
@@ -43,7 +43,10 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
 
-              Text("English AI",style: TextStyle(color: menu,fontWeight: FontWeight.bold,fontSize: textfont),),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text("English AI",style: TextStyle(color: menu,fontWeight: FontWeight.bold,fontSize: textfont),),
+              ),
               SizedBox(width:
                 midpadding,
               ),
@@ -52,16 +55,16 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
               // Padding(padding: EdgeInsets.only(left: 0,top: 10),
               // child:
               Padding(
-                padding: const EdgeInsets.only(left: 100, top: 10),
+                padding: const EdgeInsets.only(left: 90, top: 10),
                 child: Container(
-                  height: 40,
+                  height: 30,
                   width: 100,
                   decoration: BoxDecoration(
                       color: menu, borderRadius: BorderRadius.circular(20)),
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 13),
+                        padding: const EdgeInsets.only(left: 10),
                         child: Text(
                           "Menu",
                           style: TextStyle(fontSize: 15, color: themecolor),

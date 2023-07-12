@@ -5,6 +5,7 @@ import '../components/Article.dart';
 import '../components/Focus.dart';
 import '../const/color.dart';
 import '../constWidget/textwidget.dart';
+import 'aap_bar.dart';
 import 'bottombar.dart';
 
 
@@ -23,15 +24,19 @@ class _tabletPageState extends State<tabletPage> {
   Color btn_col = Colors.white;
   int selected_index=3;
   int article_name_ind=3;
+  int selected_index2=1;
+  double fontsize=15;
 
-  
+
+
 
   @override
   Widget build(BuildContext context) {
     var mq= MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 239, 183, 252),
+      appBar: appbar(
+        appbaricon: Icons.person,
+        appbarsize: 16,midpadding:450,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
       ),
       body: Column(
         children: [
@@ -56,30 +61,27 @@ class _tabletPageState extends State<tabletPage> {
                          Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children:[
-                            Focas_container(height:mq.height* 0.080,width:mq.width*0.310,fontsize:28),
+                            Focas_container(height:mq.height* 0.080,width:mq.width*0.310,focusiconsize: 20,focusfontsize: 20),
                             const SizedBox(width:250),
-                            Row(
+                            Padding(
+                              padding: const EdgeInsets.all(1.0),
+                              child: Container(height:30,
+                                child:Row(mainAxisAlignment: MainAxisAlignment.start,
+
                                   children:[
-                                    InkWell(
-                                      onTap: (){setState(() {
-                                        textsize=24+2;
-                                      });; },
-                                      child: textwidget("A",25, FontWeight.w500, textcolor)),
+                                    FloatingActionButton(elevation: 0.0,backgroundColor:
+                                    selected_index2==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                        onPressed:(){setState(() {selected_index2=1;fontsize=15;});},child: textwidget("A", 10, FontWeight.w500, Colors.black)),
+                                    FloatingActionButton(elevation: 0.0,backgroundColor:
+                                    selected_index2==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                        onPressed:(){setState(() {selected_index2=2;fontsize=20;});},child: textwidget("A", 15, FontWeight.w500, Colors.black)),
+                                    FloatingActionButton(elevation: 0.0,backgroundColor:
+                                    selected_index2==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                        onPressed:(){setState(() {selected_index2=3;fontsize=27;});},child: textwidget("A", 18, FontWeight.w500, Colors.black)),
 
-                                    SizedBox(width:20),
-                                    InkWell(
-                                      onTap: (){setState(() {
-                                        textsize=24+2+3;
-                                      }); },
-                                      child: textwidget("A", 29, FontWeight.w500, textcolor)),
-
-                                    SizedBox(width:20),
-                                    InkWell(
-                                      onTap: (){setState(() {
-                                        textsize=24+2+3+2;
-                                      }); },
-                                      child: textwidget("A", 32, FontWeight.w500, textcolor)),
-                                ]),
+                                  ],),
+                              ),
+                            ),
 
 
                             ],),
@@ -108,24 +110,24 @@ class _tabletPageState extends State<tabletPage> {
                                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                children:[
                                                   FloatingActionButton(backgroundColor:
-                                                  selected_index==1?Colors.amber:Colors.white,
+                                                  selected_index==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
 
                                                   onPressed:(){setState(() {selected_index=1;});},child: textwidget("1", 20, FontWeight.w300, textcolor)),
                                                   // const SizedBox(width:20,),
                                                   FloatingActionButton(backgroundColor:
-                                                  selected_index==2?Colors.amber:Colors.white,
+                                                  selected_index==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
                                                   onPressed:(){setState(() {selected_index=2;});},child: textwidget("2", 20, FontWeight.w300, textcolor)),
                                                   // const SizedBox(width:20,),
                                                   FloatingActionButton(backgroundColor:
-                                                  selected_index==3?Colors.amber:Colors.white,
+                                                  selected_index==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
                                                   onPressed:(){setState(() {selected_index=3;});},child: textwidget("3", 20, FontWeight.w300, textcolor)),
                                                   // const SizedBox(width:20,),
                                                   FloatingActionButton(backgroundColor:
-                                                  selected_index==4?Colors.amber:Colors.white,
+                                                  selected_index==4?Color.fromARGB(255, 113, 168, 47):Colors.white,
                                                   onPressed:(){setState(() {selected_index=4;});},child: textwidget("4", 20, FontWeight.w300, textcolor)),
                                                   // const SizedBox(width:20,),
                                                   FloatingActionButton(backgroundColor:
-                                                  selected_index==5?Colors.amber:Colors.white,
+                                                  selected_index==5?Color.fromARGB(255, 113, 168, 47):Colors.white,
                                                   onPressed:(){setState(() {selected_index=5;});},child: textwidget("5", 20, FontWeight.w300, textcolor)),
                                             ],),
                                            ),
@@ -143,7 +145,7 @@ class _tabletPageState extends State<tabletPage> {
                                   padding: const EdgeInsets.all(10.0),
                                   child: Container(
                                     child: textwidget(articles[article_name_ind]['versions'][selected_index-1],
-                                        textsize, FontWeight.w200, Color.fromARGB(255, 245, 144, 141)),
+                                        fontsize, FontWeight.w200, Colors.black),
                                   ),
                                 )
 
@@ -157,7 +159,7 @@ class _tabletPageState extends State<tabletPage> {
           ),
 
 
-      Container(height: 50,width: 500
+      Container(height: 50,width: 1000
           ,child: bottomScreen()),
         ],
       ),

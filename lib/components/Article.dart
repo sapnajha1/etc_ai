@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../const/color.dart';
+import '../const/color.dart';
+
 class Article_image extends StatelessWidget {
   const Article_image({
     super.key,
@@ -20,7 +23,7 @@ class Article_image extends StatelessWidget {
           child: Container(
             height:height,
             width:width,
-            decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(40),bottomLeft: Radius.circular(40) ),color: const Color.fromARGB(255, 235, 160, 138)),
+            decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(40),bottomLeft: Radius.circular(40) ),color: highlights),
           ),
         ),
     
