@@ -1,4 +1,3 @@
-import 'package:english_ai/screen/tablet.dart';
 import 'package:flutter/material.dart';
 import '../article_content.dart';
 import 'package:english_ai/constWidget/textwidget.dart';
@@ -9,22 +8,21 @@ import '../const/color.dart';
 import 'aap_bar.dart';
 import 'bottombar.dart';
 import 'desktop.dart';
-import 'focus_tablet.dart';
 
 
 
-class tabletPage extends StatefulWidget {
-  const tabletPage({super.key, required this.title});
+class DesktopFocusPage extends StatefulWidget {
+  const DesktopFocusPage({super.key, required this.title});
 
 
 
   final String title;
 
   @override
-  State<tabletPage> createState() => _tabletPageState();
+  State<DesktopFocusPage> createState() => _DesktopFocusPageState();
 }
 
-class _tabletPageState extends State<tabletPage> {
+class _DesktopFocusPageState extends State<DesktopFocusPage> {
 
   // Color btn_col=Colors.white;
 
@@ -48,10 +46,10 @@ class _tabletPageState extends State<tabletPage> {
   Widget build(BuildContext context) {
     var mq= MediaQuery.of(context).size;
     return Scaffold(
-      appBar: appbar(
-        appbaricon: Icons.person,
-        appbarsize: 16,midpadding:650,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
-      ),
+      // appBar: appbar(
+      //   appbaricon: Icons.person,
+      //   appbarsize: 16,midpadding:1000,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
+      // ),
       body: Column(
         children: [
           Expanded(
@@ -78,9 +76,10 @@ class _tabletPageState extends State<tabletPage> {
                         // Article in Focus mode
                         const SizedBox(width:25),
                         InkWell(onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => tabletFocusPage(title: 'tabletsocuspage',)));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => DesktopPage(title: 'desktoppage',)));
                         },
-                            child: Focas_container(focustext: "Enter Focus Mode",height:mq.height* 0.045,width:mq.width*0.180,focusfontsize: 15,focusiconsize: 15)),                      ],),
+                            child: Focas_container(focustext: "Exist Focus Mode",height:mq.height* 0.055,width:mq.width*0.150,
+                                focusfontsize: 18,focusiconsize: 18)),                      ],),
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +87,7 @@ class _tabletPageState extends State<tabletPage> {
                         // Level_con(m_height:70, m_width:840, level_text_size:20, space_l_b:20),
                         Container(
                             width:mq.width*0.450,
-                            height:mq.height*0.080,
+                            height:mq.height*0.090,
                             // LEVEL TEXT
                             child:Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -166,8 +165,8 @@ class _tabletPageState extends State<tabletPage> {
             ),
           ),
 
-          Container(height: 50,width: 1500
-              ,child: bottomScreen()),
+          // Container(height: 50,width: 1500
+          //     ,child: bottomScreen()),
         ],
       ),
     );

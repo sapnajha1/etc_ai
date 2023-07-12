@@ -9,22 +9,21 @@ import '../const/color.dart';
 import 'aap_bar.dart';
 import 'bottombar.dart';
 import 'desktop.dart';
-import 'focus_tablet.dart';
 
 
 
-class tabletPage extends StatefulWidget {
-  const tabletPage({super.key, required this.title});
+class tabletFocusPage extends StatefulWidget {
+  const tabletFocusPage({super.key, required this.title});
 
 
 
   final String title;
 
   @override
-  State<tabletPage> createState() => _tabletPageState();
+  State<tabletFocusPage> createState() => _tabletFocusPageState();
 }
 
-class _tabletPageState extends State<tabletPage> {
+class _tabletFocusPageState extends State<tabletFocusPage> {
 
   // Color btn_col=Colors.white;
 
@@ -48,10 +47,10 @@ class _tabletPageState extends State<tabletPage> {
   Widget build(BuildContext context) {
     var mq= MediaQuery.of(context).size;
     return Scaffold(
-      appBar: appbar(
-        appbaricon: Icons.person,
-        appbarsize: 16,midpadding:650,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
-      ),
+      // appBar: appbar(
+      //   appbaricon: Icons.person,
+      //   appbarsize: 16,midpadding:1000,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
+      // ),
       body: Column(
         children: [
           Expanded(
@@ -78,9 +77,9 @@ class _tabletPageState extends State<tabletPage> {
                         // Article in Focus mode
                         const SizedBox(width:25),
                         InkWell(onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => tabletFocusPage(title: 'tabletsocuspage',)));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => tabletPage(title: 'tabletpage',)));
                         },
-                            child: Focas_container(focustext: "Enter Focus Mode",height:mq.height* 0.045,width:mq.width*0.180,focusfontsize: 15,focusiconsize: 15)),                      ],),
+                            child: Focas_container(focustext: "Exist Focus Mode",height:mq.height* 0.045,width:mq.width*0.180,focusfontsize: 15,focusiconsize: 15)),                      ],),
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -166,8 +165,8 @@ class _tabletPageState extends State<tabletPage> {
             ),
           ),
 
-          Container(height: 50,width: 1500
-              ,child: bottomScreen()),
+          // Container(height: 50,width: 1500
+          //     ,child: bottomScreen()),
         ],
       ),
     );

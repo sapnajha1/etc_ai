@@ -3,7 +3,6 @@ import'package:flutter/material.dart';
 import '../const/color.dart';
 import '../constWidget/textwidget.dart';
 
-// import '../const_style.dart';
 
 class Focas_container extends StatelessWidget {
   const Focas_container({
@@ -12,6 +11,7 @@ class Focas_container extends StatelessWidget {
     required this.width,
     required this.focusfontsize,
     required this.focusiconsize,
+    required this.focustext,
     
   });
   
@@ -19,6 +19,7 @@ class Focas_container extends StatelessWidget {
   final double width;
   final double focusfontsize;
   final double focusiconsize;
+  final String focustext;
   
 
   @override
@@ -35,7 +36,7 @@ class Focas_container extends StatelessWidget {
                 children: [
                   Icon(Icons.visibility,size: focusiconsize,),
                   SizedBox(width:8),
-                  textwidget("Enter Focus Mode",focusfontsize,FontWeight.bold, textcolor),
+                  textwidget(focustext,focusfontsize,FontWeight.bold, textcolor),
                 ],
               ),
             )

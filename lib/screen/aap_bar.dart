@@ -1,5 +1,4 @@
 import 'package:english_ai/const/color.dart';
-import 'package:english_ai/screen/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -91,9 +90,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
                               }
                             },
 
-                            // onSelected: (value){
-                            //   print(value);
-                            // },
+
                             itemBuilder: (BuildContext context) {
                               return [
                                 PopupMenuItem(
@@ -164,41 +161,7 @@ class appbar extends StatelessWidget implements PreferredSizeWidget {
                           ),
                         ),
                       ),
-                      // ),
 
-                      // Container(height: 25,width: 130,decoration: BoxDecoration(color: highlights,borderRadius: BorderRadius.circular(50)),
-                      //     child:
-                      //     Padding(
-                      //       padding: const EdgeInsets.only(left: 15),
-                      //       child: Row(children: [
-                      //          Icon(Icons.person,color: Colors.black,size: 20,),
-                      //
-                      //
-                      //
-                      //           SizedBox(width: 2,),
-                      //           Text("Name",style: GoogleFonts.poppins(color: Colors.black,fontSize: 12,fontWeight: FontWeight.bold),),
-                      //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-                      //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-                      // DropdownButton(
-                      //   icon: Icon(Icons.arrow_drop_down),
-                      //   iconSize: 40,
-                      //   value: valueChoose,
-                      //   onChanged:(newValue){
-                      //     setState((){
-                      //       valueChoose = newValue;
-                      //     });
-                      // },
-                      // items: listItem.map((valueItem){
-                      //   return DropdownMenuItem(
-                      //     value: valueItem,
-                      //     child:Text(valueItem), );
-                      // }).toList(),
-                      // )
-                      //
-                      //   ],),
-                      //
-                      // ),
                     ],
                   ),
                 ),

@@ -5,6 +5,6 @@ Widget textwidget(String text, double fontsize ,fontweight,Color color){
   style:
   TextStyle(
     fontSize:fontsize , 
-    fontWeight: fontweight, 
+    fontWeight: FontWeight.w400,
     color: color));
 }

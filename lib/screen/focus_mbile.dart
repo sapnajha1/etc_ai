@@ -7,21 +7,24 @@ import '../article_content.dart';
 import '../components/Article.dart';
 import '../components/Focus.dart';
 import '../const/color.dart';
+
+import '../const/color.dart';
 import 'aap_bar.dart';
 import 'bottombar.dart';
+import 'mobile.dart';
 
-class MobilePage extends StatefulWidget {
-  const MobilePage({super.key, required this.title});
+class MobileFocusPage extends StatefulWidget {
+  const MobileFocusPage({super.key, required this.title});
 
 
 
   final String title;
 
   @override
-  State<MobilePage> createState() => _MobilePageState();
+  State<MobileFocusPage> createState() => _MobileFocusPageState();
 }
 
-class _MobilePageState extends State<MobilePage> {
+class _MobileFocusPageState extends State<MobileFocusPage> {
   double textsize=20;
 
   int selected_index=3;
@@ -38,10 +41,10 @@ class _MobilePageState extends State<MobilePage> {
     return Scaffold(
 
       //APPBAR
-        appBar: appbar(
-          appbaricon: Icons.person,
-          appbarsize: 16,midpadding:10,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
-        ),
+      //   appBar: appbar(
+      //     appbaricon: Icons.person,
+      //     appbarsize: 16,midpadding:10,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
+      //   ),
 
         //BODY
         body:
@@ -75,9 +78,9 @@ class _MobilePageState extends State<MobilePage> {
 
                                 // FOCE MODE
                                 InkWell(onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => MobileFocusPage(title: 'mobilefocusmobile',)));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => MobilePage(title: 'mobilemobile',)));
                                 },
-                                 child: Focas_container(focustext: "Enter Focus Mode",height:mq.height* 0.040,width:mq.width*0.450,focusfontsize: 15,focusiconsize: 15)),
+                                    child: Focas_container(focustext: "Exit Focus Mode",height:mq.height* 0.040,width:mq.width*0.450,focusfontsize: 15,focusiconsize: 15)),
 
                                 // INCREASING FONTSIZE
 
@@ -119,7 +122,7 @@ class _MobilePageState extends State<MobilePage> {
                                       child:Row(
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           children:[
-                                            textwidget("Level", 15, FontWeight.bold,menu ),
+                                            textwidget("Level", 15, FontWeight.w500, menu),
                                             SizedBox(width:17),
 
                                             //DIFFERENT LEVEL ACCORDING TO THE NUMBERS'S  CONTAINER
@@ -171,8 +174,8 @@ class _MobilePageState extends State<MobilePage> {
             ),
           ),
 
-          Container(height: 50,width: 500
-              ,child: bottomScreen()),
+          // Container(height: 50,width: 500
+          //     ,child: bottomScreen()),
         ],)
     );
   }

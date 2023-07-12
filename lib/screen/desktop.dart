@@ -7,6 +7,7 @@ import '../components/Focus.dart';
 import '../const/color.dart';
 import 'aap_bar.dart';
 import 'bottombar.dart';
+import 'focus_desktop.dart';
 
 
 
@@ -49,7 +50,6 @@ class _DesktopPageState extends State<DesktopPage> {
         appbaricon: Icons.person,
         appbarsize: 16,midpadding:1000,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
       ),
-      // appBar: appbar(appbaricon:, appbarsize: appbarsize),
       body: Column(
         children: [
           Expanded(
@@ -69,16 +69,16 @@ class _DesktopPageState extends State<DesktopPage> {
 
                           // Article name
                           const SizedBox(width:25),
-                          // textwidget("Eid Festival",22, FontWeight.bold, Colors.black),
 
-                          textwidget(articles[article_name_ind]['article_name'],40, FontWeight.bold, textcolor),
+                          textwidget(articles[article_name_ind]['article_name'],23, FontWeight.bold, textcolor),
 
-                          // textwidget(articles[article_name_ind]['articles_name'],25, FontWeight.bold, textcolor),
 
                           // Article in Focus mode
                           const SizedBox(width:25),
-                          Focas_container(height:mq.height* 0.070,width:mq.width* 0.15,focusfontsize:18,focusiconsize: 18,)
-
+                          InkWell(onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => DesktopFocusPage(title: 'desktopfocusmobile',)));
+                          },
+                              child: Focas_container(focustext: "Enter Focus Mode",height:mq.height* 0.055,width:mq.width*0.150,focusfontsize: 18,focusiconsize: 18)),
                         ],),
 
                         Row(
@@ -94,7 +94,7 @@ class _DesktopPageState extends State<DesktopPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children:[
-                                textwidget("Level",25, FontWeight.bold, textcolor),
+                                textwidget("Level",25, FontWeight.bold, menu),
                                 SizedBox(width:20),
 
                                 //DIFFERENT LEVEL ACCORDING TO THE NUMBERS'S  CONTAINER
@@ -150,22 +150,6 @@ class _DesktopPageState extends State<DesktopPage> {
 
                             ],),
                             SizedBox(height:30),
-                          // Article content
-                          //       Padding(
-                          //         padding: const EdgeInsets.all(10.0),
-                          //         child: Container(
-                          //           child: textwidget("                              Eid is a special festival that Muslims around the world celebrate with great joy and excitement. It marks the end of Ramadan, a month of fasting and prayers. "
-                          //               "Eid is a time for families and friends to come together and share happiness. During Eid, people wear beautiful new clothes and greet each other by saying 'Eid Mubarak!', \n\n      which means 'Blessed Eid!' "
-                          //               "Children receive gifts and sweets, and everyone enjoys delicious food. One of the most important parts of Eid is going to the mosque for special prayers. "
-                          //               "People thank Allah for all the blessings and show gratitude for the month of Ramadan. After the prayers, families visit each other and exchange greetings. "
-                          //               "\n\nEid is also a time for giving to those in need. Muslims donate money and food to charity to help those who are less fortunate. It teaches us the value of kindness and sharing. "
-                          //               "The highlight of Eid is the delicious food! Families prepare traditional dishes like biryani, samosas, and sweet treats like sheer khurma.",
-                          //               fontsize, FontWeight.w400, Colors.black),
-                          //         ),
-                          //       )
-
-
-
                                 Padding(
                                   padding: const EdgeInsets.all(10.0),
                                   child: Container(
@@ -173,13 +157,7 @@ class _DesktopPageState extends State<DesktopPage> {
                                         fontsize, FontWeight.w200, Colors.black),
                                   ),
                                 )
-                                // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-                          // Padding(
-                          //   padding: const EdgeInsets.all(10.0),
-                          //   child: Container(
-                          //       child: textwidget(articles[article_name_ind]['versions'][selected_index-1],
-                          //         textsize, FontWeight.w300, Colors.black)),
-                          //         ),
+
 
                               ],
                              ),
