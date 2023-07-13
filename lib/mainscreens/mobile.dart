@@ -1,35 +1,36 @@
 
-import 'package:english_ai/constWidget/textwidget.dart';
-import 'package:english_ai/screen/focus_mbile.dart';
-import 'package:flutter/material.dart';
 
+
+import 'package:english/focus_screens/f_mobile.dart';
+import 'package:flutter/material.dart';
 import '../article_content.dart';
 import '../components/Article.dart';
 import '../components/Focus.dart';
-import '../const/color.dart';
+import '../constWidget/textwidget.dart';
 import 'aap_bar.dart';
-import 'bottombar.dart';
+
 
 class MobilePage extends StatefulWidget {
-  const MobilePage({super.key, required this.title});
+  const MobilePage({super.key, required this.title, required this.article_name_in});
 
 
 
   final String title;
+  final int article_name_in;
 
   @override
   State<MobilePage> createState() => _MobilePageState();
 }
 
 class _MobilePageState extends State<MobilePage> {
-  double textsize=20;
+  double textsize=17;
 
   int selected_index=3;
-  int? selected_index2=1;
-  int article_name_ind=3;
+  int selected_index2=1;
+  int article_name_in=0;
+  
 
-  double fontsize=15;
-
+  
 
 
   @override
@@ -40,14 +41,15 @@ class _MobilePageState extends State<MobilePage> {
       //APPBAR
         appBar: appbar(
           appbaricon: Icons.person,
-          appbarsize: 16,midpadding:10,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
+          appbarsize: 16,midpadding:50,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
         ),
-
+        backgroundColor: Colors.white,
         //BODY
         body:
         Column(children:[
           Expanded(
-            child: SingleChildScrollView(physics: ScrollPhysics(),
+            child: 
+            SingleChildScrollView(physics: ScrollPhysics(),
                 child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Column(
@@ -57,14 +59,10 @@ class _MobilePageState extends State<MobilePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               // ARTICLE IMAGE
-                              Article_image(height:mq.height*0.08,width:mq.width*0.200),
-                              const SizedBox(width:1),
-
-
-                              //// ARTICLE NAME,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-                              textwidget(articles[article_name_ind]['article_name'],18, FontWeight.w500, textcolor),
-
+                              Article_image(height:mq.height*0.08,width:mq.width*0.200, imgurl:articles[article_name_in]['article_image']),
+                              const SizedBox(width:20),
+                              //// ARTICLE NAME
+                              textwidget(articles[article_name_in]['article_name'],22, FontWeight.bold, Colors.black),
 
 
                             ],),
@@ -73,11 +71,9 @@ class _MobilePageState extends State<MobilePage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children:[
 
-                                // FOCE MODE
-                                InkWell(onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => MobileFocusPage(title: 'mobilefocusmobile',)));
-                                },
-                                 child: Focas_container(focustext: "Enter Focus Mode",height:mq.height* 0.040,width:mq.width*0.450,focusfontsize: 15,focusiconsize: 15)),
+                                // FOCUS MODE
+                                InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_MobilePage()));} ,child: Focas_container(focustext:"Focus Mode",height:mq.height* 0.050,width:mq.width*0.350,fontsize:14)),
+                               
 
                                 // INCREASING FONTSIZE
 
@@ -90,13 +86,14 @@ class _MobilePageState extends State<MobilePage> {
                                       children:[
                                         FloatingActionButton(elevation: 0.0,backgroundColor:
                                         selected_index2==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                            onPressed:(){setState(() {selected_index2=1;fontsize=15;});},child: textwidget("A", 10, FontWeight.w500, Colors.black)),
+                                            onPressed:(){setState(() {selected_index2=1;textsize=20;});},child: textwidget("A", 10, FontWeight.w500, Colors.black)),
                                         FloatingActionButton(elevation: 0.0,backgroundColor:
                                         selected_index2==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                            onPressed:(){setState(() {selected_index2=2;fontsize=20;});},child: textwidget("A", 15, FontWeight.w500, Colors.black)),
+                                            onPressed:(){setState(() {selected_index2=2;textsize=22;});},child: textwidget("A", 15, FontWeight.w500, Colors.black)),
                                         FloatingActionButton(elevation: 0.0,backgroundColor:
                                         selected_index2==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                            onPressed:(){setState(() {selected_index2=3;fontsize=25;});},child: textwidget("A", 18, FontWeight.w500, Colors.black)),
+                                            onPressed:(){setState(() {selected_index2=3;textsize=25;});},child: textwidget("A", 18, FontWeight.w500, Colors.black)),
+
 
                                       ],),
                                   ),
@@ -107,7 +104,7 @@ class _MobilePageState extends State<MobilePage> {
 
                           // LEVEL ROW
                           const SizedBox(height:20),
-                          Row(mainAxisAlignment: MainAxisAlignment.start,
+                          Row(mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(left: 3),
@@ -117,9 +114,9 @@ class _MobilePageState extends State<MobilePage> {
 
                                       // LEVEL TEXT
                                       child:Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                           children:[
-                                            textwidget("Level", 15, FontWeight.bold,menu ),
+                                            textwidget("Level",15, FontWeight.bold, Colors.black),
                                             SizedBox(width:17),
 
                                             //DIFFERENT LEVEL ACCORDING TO THE NUMBERS'S  CONTAINER
@@ -129,38 +126,37 @@ class _MobilePageState extends State<MobilePage> {
                                                 child:Row(
 
                                                   children:[
-                                                    FloatingActionButton(elevation: 2.0,backgroundColor:
+                                                    FloatingActionButton(elevation: 0.0,backgroundColor:
                                                     selected_index==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                        onPressed:(){setState(() {selected_index=1;});},child: textwidget("1", 10, FontWeight.w500, Colors.black)),
-                                                    FloatingActionButton(elevation: 2.0,backgroundColor:
+                                                        onPressed:(){setState(() {selected_index=1;});},child: textwidget("1", 15, FontWeight.w500, Colors.black)),
+                                                    FloatingActionButton(elevation: 0.0,backgroundColor:
                                                     selected_index==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                        onPressed:(){setState(() {selected_index=2;});},child: textwidget("2", 10, FontWeight.w500, Colors.black)),
-                                                    FloatingActionButton(elevation: 2.0,backgroundColor:
+                                                        onPressed:(){setState(() {selected_index=2;});},child: textwidget("2", 15, FontWeight.w500, Colors.black)),
+                                                    FloatingActionButton(elevation: 0.0,backgroundColor:
                                                     selected_index==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                        onPressed:(){setState(() {selected_index=3;});},child: textwidget("3", 10, FontWeight.w500, Colors.black)),
-                                                    FloatingActionButton(elevation: 2.0,backgroundColor:
+                                                        onPressed:(){setState(() {selected_index=3;});},child: textwidget("3", 15, FontWeight.w500, Colors.black)),
+                                                    FloatingActionButton(elevation: 0.0,backgroundColor:
                                                     selected_index==4?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                        onPressed:(){setState(() {selected_index=4;});},child: textwidget("4", 10, FontWeight.w500, Colors.black)),
-                                                    FloatingActionButton(elevation: 2.0,backgroundColor:
+                                                        onPressed:(){setState(() {selected_index=4;});},child: textwidget("4", 15, FontWeight.w500, Colors.black)),
+                                                    FloatingActionButton(elevation: 0.0,backgroundColor:
                                                     selected_index==5?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                        onPressed:(){setState(() {selected_index=5;});},child: textwidget("5", 10, FontWeight.w500, Colors.black)),
+                                                        onPressed:(){setState(() {selected_index=5;});},child: textwidget("5", 15, FontWeight.w500, Colors.black)),
                                                   ],),
                                               ),
                                             ),
                                           ])),
-                                )
-                              ]),
+                                ),
 
+
+                        ]),
                           //ARTICLE CONTENT
 
-
                           SizedBox(height: 40,),
-
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Container(
-                              child: textwidget(articles[article_name_ind]['versions'][selected_index-1],
-                                  fontsize, FontWeight.w200, Colors.black),
+                              child: textwidget(articles[article_name_in]['versions'][selected_index-1],
+                                  textsize, FontWeight.w400, const Color.fromARGB(255, 243, 33, 138)),
                             ),
                           )
 
@@ -169,10 +165,16 @@ class _MobilePageState extends State<MobilePage> {
 
                 )
             ),
-          ),
+        ),
 
-          Container(height: 50,width: 500
-              ,child: bottomScreen()),
+          Container(height: 60,width:mq.width
+          ,child:Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children:[
+            InkWell(
+              onTap: (){setState((){if(article_name_in>0){article_name_in--;}});}, child: Image.asset("images/left-arrow.png",height:35,width:35)),
+            InkWell(onTap: (){setState((){if(article_name_in<4){article_name_in++;}});},child: Image.asset("images/right-arrow-black-triangle.png",height:35,width:35))
+          ])),
         ],)
     );
   }
