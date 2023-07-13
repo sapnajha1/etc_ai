@@ -4,7 +4,8 @@
 
   List<Map<String, dynamic>> articles = [
     {
-      "article_name": "Eid",
+      "article_name": "Eid Festival",
+      "article_image":"images/eid.png",
       "versions": [''' 
       Eid is a special festival that Muslims around the world celebrate with great joy and excitement. It marks the end of Ramadan, a month of fasting and prayers. Eid is a time for families and friends to come together and share happiness.
         During Eid, people wear beautiful new clothes and greet each other by saying "Eid Mubarak!" which means "Blessed Eid!" Children receive gifts and sweets, and everyone enjoys delicious food.
@@ -55,7 +56,8 @@
       ]
     },
     {
-      "article_name": "Article 2",
+      "article_name": "Outdoor Games",
+       "article_image":"images/games.jpeg",
       "versions": [
         '''
        Children, aged 3 to 5, are at a magical stage of life filled with curiosity and discovery. This is a time when you learn and grow in many wonderful ways!
@@ -104,6 +106,7 @@
     },
     {
       "article_name": "Blockchain",
+       "article_image":"images/blockchain.png",
       "versions": [
         '''
        Blockchain is a fascinating concept that can be explained to young children in simple terms. Imagine a special treasure box that keeps things safe and never lets them change. That's what blockchain is like!
@@ -147,6 +150,7 @@
     },
     {
       "article_name": "Artificial Intelligence",
+      "article_image":"images/intelli.jpeg",
       "versions": [
         '''
         Hello, little friends! Today, let's embark on an exciting adventure into the world of Artificial Intelligence, or AI for short. AI is like having a smart friend who can think and learn just like you!
@@ -202,6 +206,7 @@
     },
     {
       "article_name": "Bitcoin",
+      "article_image":"images/bitcoin.jpeg",
       "versions": [
         '''
         Once upon a time, in a world filled with wonders, there were special coins called Bitcoin. These coins were not like the ones we use every day; they lived inside computers and could do magical things!
