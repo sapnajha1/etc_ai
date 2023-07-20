@@ -74,7 +74,7 @@ class _MobilePageState extends State<MobilePage> {
                               children:[
 
                                 // FOCUS MODE
-                                InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_MobilePage()));} ,child: Focas_container(focustext:"Enter Focus Mode",height:mq.height* 0.050,width:mq.width*0.470,fontsize:14)),
+                                InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_MobilePage(article_name_in: article_name_in, selected_index: selected_index, selected_index2: selected_index2,fontsize: textsize,)));} ,child: Focas_container(focustext:"Enter Focus Mode",height:mq.height* 0.050,width:mq.width*0.470,fontsize:14)),
                                
 
                                 // INCREASING FONTSIZE

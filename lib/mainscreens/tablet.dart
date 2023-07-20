@@ -64,7 +64,7 @@ class _tabletPageState extends State<tabletPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children:[
                             
-                            InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_tabletPage()));} ,child: Focas_container(focustext:"Enter Focus Mode",height:mq.height* 0.050,width:mq.width*0.300,fontsize:15)),
+                            InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_tabletPage(article_name_in: article_name_in, selected_index: selected_index, selected_index2: selected_index2, fontsize: textsize)));} ,child: Focas_container(focustext:"Enter Focus Mode",height:mq.height* 0.050,width:mq.width*0.300,fontsize:15)),
 
                             const SizedBox(width:150),
                             Row(
