@@ -1,5 +1,7 @@
-import 'package:english/const/color.dart';
+// import 'package:english/const/color.dart';
 import 'package:flutter/material.dart';
+
+import '../const/color.dart';
 
 class Article_image extends StatelessWidget {
   const Article_image({

@@ -1,8 +1,14 @@
-import 'package:english/responsive/responsive_layout.dart';
-import 'package:english/mainscreens/desktop.dart';
-import 'package:english/mainscreens/mobile.dart';
-import 'package:english/mainscreens/tablet.dart';
+// import 'package:english/responsive/responsive_layout.dart';
+// import 'package:english/mainscreens/desktop.dart';
+// import 'package:english/mainscreens/mobile.dart';
+// import 'package:english/mainscreens/tablet.dart';
+import 'package:english_ai/responsive/responsive_layout.dart';
 import 'package:flutter/material.dart';
+// import 'package:request_permission/request_permission.dart';
+
+import 'mainscreens/desktop.dart';
+import 'mainscreens/mobile.dart';
+import 'mainscreens/tablet.dart';
 
 
 void main() {

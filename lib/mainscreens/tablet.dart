@@ -1,4 +1,4 @@
-import 'package:english/focus_screens/f_tablet.dart';
+// import 'package:english/focus_screens/f_tablet.dart';
 import 'package:flutter/material.dart';
 
 import '../article_content.dart';
@@ -6,6 +6,7 @@ import '../components/Article.dart';
 import '../components/Focus.dart';
 import '../const/color.dart';
 import '../constWidget/textwidget.dart';
+import '../focus_screens/f_tablet.dart';
 import 'aap_bar.dart';
 
 
@@ -63,7 +64,7 @@ class _tabletPageState extends State<tabletPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children:[
                             
-                            InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_tabletPage()));} ,child: Focas_container(focustext:"Focus Mode",height:mq.height* 0.080,width:mq.width*0.310,fontsize:28)),
+                            InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_tabletPage()));} ,child: Focas_container(focustext:"Enter Focus Mode",height:mq.height* 0.050,width:mq.width*0.300,fontsize:15)),
 
                             const SizedBox(width:150),
                             Row(
@@ -102,7 +103,7 @@ class _tabletPageState extends State<tabletPage> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children:[
-                                      textwidget("Level",30, FontWeight.bold, textcolor),
+                                      textwidget("Level",30, FontWeight.bold, menu),
                                       SizedBox(width:30),
 
                                       //DIFFERENT LEVEL ACCORDING TO THE NUMBERS'S  CONTAINER
@@ -147,7 +148,7 @@ class _tabletPageState extends State<tabletPage> {
                                   padding: const EdgeInsets.all(10.0),
                                   child: Container(
                                     child: textwidget(articles[article_name_in]['versions'][selected_index-1],
-                                        textsize, FontWeight.w200, Color.fromARGB(255, 243, 33, 138),)
+                                        textsize, FontWeight.w200, Colors.black,)
                                   ),
                                 )
 

@@ -1,11 +1,12 @@
 // import 'package:english/screen/aap_bar.dart';
-import 'package:english/focus_screens/f_desktop.dart';
+// import 'package:english/focus_screens/f_desktop.dart';
 import 'package:flutter/material.dart';
 import '../article_content.dart';
 import '../components/Article.dart';
 import '../components/Focus.dart';
 import '../const/color.dart';
 import '../constWidget/textwidget.dart';
+import '../focus_screens/f_desktop.dart';
 import 'aap_bar.dart';
 
 
@@ -72,12 +73,13 @@ class _DesktopPageState extends State<DesktopPage> {
                           Article_image(height:mq.height*0.15,width:mq.width*0.15,imgurl: articles[article_name_in]['article_image'],),
 
                           // Article name
-                          const SizedBox(width:30),
+                          const SizedBox(width:0),
                           textwidget(articles[article_name_in]['article_name'],25, FontWeight.bold, textcolor),
 
                           // Article in Focus mode
-                          const SizedBox(width:30),
-                          InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_DesktopPage()));} ,child:Focas_container(focustext:"Focus Mode",height:mq.height* 0.090,width:mq.width* 0.10,fontsize:13))
+                          const SizedBox(width:0),
+                          InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder:
+                              (context)=>f_DesktopPage(article_name_in: article_name_in, selected_index: selected_index, selected_index2: selected_index2, textsize: textsize)));} ,child:Focas_container(focustext:"Enter Focus Mode",height:mq.height* 0.080,width:mq.width* 0.15,fontsize:17))
 
                         ],),
 
@@ -94,7 +96,7 @@ class _DesktopPageState extends State<DesktopPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children:[
-                                textwidget("Level",25, FontWeight.bold, textcolor),
+                                textwidget("Level",25, FontWeight.bold, menu),
                                 SizedBox(width:20),
 
                                 //DIFFERENT LEVEL ACCORDING TO THE NUMBERS'S  CONTAINER
@@ -157,7 +159,7 @@ class _DesktopPageState extends State<DesktopPage> {
                             padding: const EdgeInsets.all(10.0),
                             child: Container(
                                 child: textwidget(articles[article_name_in]['versions'][selected_index-1],
-                                  textsize, FontWeight.w300,const Color.fromARGB(255, 243, 33, 138)))
+                                  textsize, FontWeight.w300,Colors.black))
                                   ),
 
                               ],

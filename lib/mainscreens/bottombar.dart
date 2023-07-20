@@ -58,8 +58,8 @@ class bottomScreenState extends State<bottomScreen> {
         currentIndex:btn_index,
         onTap: ontapped,
         items: [
-          BottomNavigationBarItem(icon:Image.asset("images/left-arrow.png",height: 30.0),label:(""),backgroundColor: Colors.black,),
-          BottomNavigationBarItem(icon:Image.asset("images/right-arrow-black-triangle.png",height: 30,),label:(""),backgroundColor: Colors.black,),
+          BottomNavigationBarItem(icon:Image.asset("images/left-arrow.png",height: 10.0),label:(""),backgroundColor: Colors.black,),
+          BottomNavigationBarItem(icon:Image.asset("images/right-arrow-black-triangle.png",height: 10,),label:(""),backgroundColor: Colors.black,),
         ],
         
       ),

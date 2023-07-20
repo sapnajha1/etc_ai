@@ -54,7 +54,7 @@ class _f_tabletPageState extends State<f_tabletPage> {
                          Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children:[
-                            InkWell(onTap:(){Navigator.pop(context);},child:Focas_container(focustext:"Unfocus Mode",height:mq.height* 0.080,width:mq.width*0.310,fontsize:28),),
+                            InkWell(onTap:(){Navigator.pop(context);},child:Focas_container(focustext:"Exit focus Mode",height:mq.height* 0.080,width:mq.width*0.310,fontsize:28),),
                             const SizedBox(width:150),
                             Row(
                                   children:[
@@ -92,7 +92,7 @@ class _f_tabletPageState extends State<f_tabletPage> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children:[
-                                      textwidget("Level",30, FontWeight.bold, textcolor),
+                                      textwidget("Level",30, FontWeight.bold, menu),
                                       SizedBox(width:30),
 
                                       //DIFFERENT LEVEL ACCORDING TO THE NUMBERS'S  CONTAINER
@@ -137,7 +137,7 @@ class _f_tabletPageState extends State<f_tabletPage> {
                                   padding: const EdgeInsets.all(10.0),
                                   child: Container(
                                     child: textwidget(articles[article_name_in]['versions'][selected_index-1],
-                                        textsize, FontWeight.w200, Color.fromARGB(255, 243, 33, 138),)
+                                        textsize, FontWeight.w200, Colors.black)
                                   ),
                                 )
 

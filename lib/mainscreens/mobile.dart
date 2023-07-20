@@ -1,12 +1,14 @@
 
 
 
-import 'package:english/focus_screens/f_mobile.dart';
+// import 'package:english/focus_screens/f_mobile.dart';
 import 'package:flutter/material.dart';
 import '../article_content.dart';
 import '../components/Article.dart';
 import '../components/Focus.dart';
+import '../const/color.dart';
 import '../constWidget/textwidget.dart';
+import '../focus_screens/f_mobile.dart';
 import 'aap_bar.dart';
 
 
@@ -41,7 +43,7 @@ class _MobilePageState extends State<MobilePage> {
       //APPBAR
         appBar: appbar(
           appbaricon: Icons.person,
-          appbarsize: 16,midpadding:50,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
+          appbarsize: 16,midpadding:0,image_height: 20,image_width: 40,textfont: 18,popupmenu: 15,
         ),
         backgroundColor: Colors.white,
         //BODY
@@ -72,7 +74,7 @@ class _MobilePageState extends State<MobilePage> {
                               children:[
 
                                 // FOCUS MODE
-                                InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_MobilePage()));} ,child: Focas_container(focustext:"Focus Mode",height:mq.height* 0.050,width:mq.width*0.350,fontsize:14)),
+                                InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_MobilePage()));} ,child: Focas_container(focustext:"Enter Focus Mode",height:mq.height* 0.050,width:mq.width*0.470,fontsize:14)),
                                
 
                                 // INCREASING FONTSIZE
@@ -116,7 +118,7 @@ class _MobilePageState extends State<MobilePage> {
                                       child:Row(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children:[
-                                            textwidget("Level",15, FontWeight.bold, Colors.black),
+                                            textwidget("Level",15, FontWeight.bold, menu),
                                             SizedBox(width:17),
 
                                             //DIFFERENT LEVEL ACCORDING TO THE NUMBERS'S  CONTAINER
@@ -153,10 +155,10 @@ class _MobilePageState extends State<MobilePage> {
 
                           SizedBox(height: 40,),
                           Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.all(20.0),
                             child: Container(
                               child: textwidget(articles[article_name_in]['versions'][selected_index-1],
-                                  textsize, FontWeight.w400, const Color.fromARGB(255, 243, 33, 138)),
+                                  textsize, FontWeight.w400, Colors.black),
                             ),
                           )
 
